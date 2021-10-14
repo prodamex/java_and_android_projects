@@ -37,7 +37,7 @@ public class Carte {
 	{
 		return this.val;
 	}
-// comparateur de cartes - qui plus gros charo des cartes
+// comparateur de cartes - qui plus grande
 	public boolean compareCarte(Carte c)
 	{
 		if(this.val > c.val)
