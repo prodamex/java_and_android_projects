@@ -37,7 +37,7 @@ public class Game {
 		return input;
 	}
 	
-	// methode pour simuler une réinitialisation (100 lignes) // clearing the console
+	// methode pour simuler une rÃ©initialisation (100 lignes) // clearing the console
 	public static void clear() {
 		for (int i = 0; i < 100; i++) {
 			System.out.println();
@@ -60,7 +60,7 @@ public class Game {
 		separateur(30);
 	}
 	
-	// methode pour arreter le jeu et laisser le temps à au joueur jusqu'à ce qu'il entre quelque chose
+	// methode pour arreter le jeu et laisser le temps Ã  au joueur jusqu'Ã  ce qu'il entre quelque chose
 	public static void attendre() {
 		System.out.println("\n Entrer quelque chose pour continuer.. ");
 		scanner.next();
@@ -90,7 +90,7 @@ public class Game {
 		Story.story();
 		attendre();
 		separateur(20);
-		// mon gars c chaud la - le joueur faut qu'il choisit un perso
+		// le joueur faut qu'il choisit un perso
 		System.out.println("\n Choisissez votre personnage");
 		System.out.println("(1) Sorcier");
 		System.out.println("(2) Elfe");
@@ -201,7 +201,7 @@ public class Game {
 		clear();
 		if (player.restsleft >= 1) {
 			titre("Veut tu prendre une sieste ? (" + player.restsleft + "sieste(s).");
-			System.out.println("(1)oui\né2) Non, pas mnt");
+			System.out.println("(1)oui\nÃ©2) Non, pas mnt");
 			int input = readInt("->", 2);
 			if (input == 1) {
 				// utilisateur prend un sieste
@@ -210,7 +210,7 @@ public class Game {
 					player.hp += hpRestored;
 					if (player.hp> player.maxHp) {
 						player.hp = player.maxHp;
-						System.out.println("t'as pris une sieste et ton hp est à" + player.hp +"/"+player.maxHp+ ".");
+						System.out.println("t'as pris une sieste et ton hp est Ã " + player.hp +"/"+player.maxHp+ ".");
 						player.restsleft--;
 					}
 				}else {
@@ -243,7 +243,7 @@ public class Game {
 				System.out.println("Vos armes d'attack : " + player.armeAttack[player.numArmeAttack]);
 			}
 			if (player.numArmeDefend >0) {
-				System.out.println("Vos armes de défense : " + player.armeDefend[player.numArmeDefend]);
+				System.out.println("Vos armes de dÃ©fense : " + player.armeDefend[player.numArmeDefend]);
 			}
 			attendre();
 		
@@ -252,7 +252,7 @@ public class Game {
 	// on crer une battle random
 	public static void randomBattle() {
 		clear();
-		titre("T'as croisé un monstre");
+		titre("T'as croisÃ© un monstre");
 		attendre();
 		battle(new Ennemi(ennemies[(int)(Math.random()*ennemies.length)], player.xp));
 	}
@@ -289,20 +289,20 @@ public class Game {
 					// on imprime l'info de bataille
 					clear();
 					titre("Battle");
-					System.out.println("T'as pris " + dmg + " damage à " + ennemi.nom + ".");
+					System.out.println("T'as pris " + dmg + " damage Ã  " + ennemi.nom + ".");
 					separateur(10);
-					System.out.println("Le " + ennemi.nom + " a subi " + dmgTook + "à toi.");
+					System.out.println("Le " + ennemi.nom + " a subi " + dmgTook + "Ã  toi.");
 					attendre();
 					// on verifie si le joueur est toujours vivant
 					if (player.hp <= 0) {
 						mort();
 						break;
 					}else if(ennemi.hp <= 0) {
-						// on dit au joueur qu'il a gagneé
+						// on dit au joueur qu'il a gagneÃ©
 						clear();
-						titre("t'as gagné contre " + ennemi.nom);
+						titre("t'as gagnÃ© contre " + ennemi.nom);
 						player.xp += ennemi.xp;
-						System.out.println("T'as gagné "+ennemi.xp+ " XP!");
+						System.out.println("T'as gagnÃ© "+ennemi.xp+ " XP!");
 						attendre();
 						break;
 					}
@@ -316,14 +316,14 @@ public class Game {
 				// verification si le joueur il est pas dans le dernier act
 				if (act != 4) {
 					if (Math.random()* 10 + 1 <= 3.5) {
-						titre("t'as reussi à fuir de " + ennemi.nom);
+						titre("t'as reussi Ã  fuir de " + ennemi.nom);
 						attendre();
 						break;
 					}else {
-						titre("T'as pas pu malheuresement fuir, le monstre t'as rattrapé");
+						titre("T'as pas pu malheuresement fuir, le monstre t'as rattrapÃ©");
 						// on calcul le damage fait au joueur
 						int dmgTook = ennemi.attack();
-						System.out.println("T'as reçu : " +dmgTook+ " damage !" );
+						System.out.println("T'as reÃ§u : " +dmgTook+ " damage !" );
 						attendre();
 						// verifier si le joueur est toujours vivant
 						if(player.hp<= 0) {
@@ -346,12 +346,12 @@ public class Game {
 		battle(new Ennemi("THE EVIL EMPEROR", 7));
 		
 	}
-	// mort dde joueur
+	// mort de joueur
 	public static void mort() {
 		clear();
 		titre("T'es mort..");
-		titre("T'as gagné " + player.xp + " XP dans ta journée. Bonne chance pour la prochaine fois!");
-		System.out.println("Merci, et à bientot :)");
+		titre("T'as gagnÃ© " + player.xp + " XP dans ta journÃ©e. Bonne chance pour la prochaine fois!");
+		System.out.println("Merci, et Ã  bientot :)");
 	}
 	//method pour magasin
 	public static void magasin() {
