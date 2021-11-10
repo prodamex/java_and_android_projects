@@ -12,7 +12,7 @@ public class Sorcier extends Personnage{
 	// Constructeur de joueur
 	public Sorcier(String nom) {
 		super(nom, 100, 0, 600);
-		//initialisation des armes à zero
+		//initialisation des armes Ã  zero
 		this.numArmeAttack = 0;
 		this.numArmeDefend = 0;
 		// choisir l'arme
@@ -21,7 +21,6 @@ public class Sorcier extends Personnage{
 	}
 
 	
-	// Player specific methods (more in the next part)
 	@Override
 	public int attack() {
 		// TODO Auto-generated method stub
