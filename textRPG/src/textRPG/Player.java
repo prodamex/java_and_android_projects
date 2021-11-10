@@ -13,7 +13,7 @@ public class Player extends Personnage{
 	// Constructeur de joueur
 	public Player(String nom) {
 		super(nom, 100, 0, 600);
-		//initialisation des armes à zero
+		//initialisation des armes Ã  zero
 		this.numArmeAttack = 0;
 		this.numArmeDefend = 0;
 		// choisir l'arme
@@ -22,7 +22,7 @@ public class Player extends Personnage{
 	}
 
 	
-	// Player specific methods (more in the next part)
+
 	@Override
 	public int attack() {
 		// TODO Auto-generated method stub
